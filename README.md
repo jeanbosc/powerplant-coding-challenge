@@ -1,4 +1,38 @@
 # powerplant-coding-challenge
+## Installation & Execution
+  ### Local execution
+  pip install -r requirements.txt
+
+  python main.py
+
+  ### Docker execution
+  docker build -t powerplan-challenge .
+
+  docker run -p 8888:8888 powerplan-challenge
+  
+## Run the requests
+  You have 3 endpoints to test this program.
+
+  ### POST /productionplan
+  Make a POST request to /productionplan with a complete body.
+  You can get the output in the console and in the response.json file in the 'result' folder.
+
+  ### POST /productionplan/all
+  Make a POST request to /prodcutionplan/all to submit all payload file from the 'example_payloads' folder.
+  You can get the responses file in the 'examples_payloads/responses' folder.
+
+  ### POST /productionplan/{id}
+  Make a POST request to /productionplan/{id} to submit the specifid paylaod file from the 'example_payloads' folder corresponding with the id param.
+  For example: POST /productionplan/1 will run the 'payload1.json' file.
+  You can get the response file in the 'examples_payloads/responses' folder.
+
+## Algorithm
+First of all, we gonna calculate the cost for each type of powerplant.
+After, we sort them from the cheaper to the most expensive.
+
+In the next part, every powerplant will be treated and add in the merit order list.
+To determine how much power the current powerplant will have to consume, we check if the next powerplant
+will have enough minimal power to manage the rest of load.
 
 
 ## Welcome !
